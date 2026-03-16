@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketMatch — FC VOID</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>TicketMatch</h1>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Matchs</a>
+            <a href="#">Mes Réservations</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="prochain-match">
+            <h2>Prochain match</h2>
+            <p><strong>FC VOID vs Raja Club</strong></p>
+            <p>Date : 15/03/2025 à 20h00</p>
+            <p>Stade : Stade d'Honneur</p>
+        </section>
+
+        <section class="a-propos">
+            <h2>À propos du club</h2>
+            <p>Le FC VOID est un club historique fondé sur la passion du football et l'engagement envers ses supporters. Rejoignez-nous pour vivre des moments inoubliables dans les gradins.</p>
+        </section>
+
+        <section class="reservation">
+            <h2>Réserver un ticket</h2>
+            <form action="#" method="POST">
+                
+                <label for="nom">Nom complet :</label>
+                <input type="text" id="nom" name="nom" required>
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="telephone">Téléphone :</label>
+                <input type="tel" id="telephone" name="telephone">
+
+                <label for="match">Match :</label>
+                <select id="match" name="match" required>
+                    <option value="" disabled selected>Choisissez un match...</option>
+                    <option value="raja">FC VOID vs Raja Club — 15/03/2025</option>
+                    <option value="wydad">FC VOID vs Wydad AC — 22/03/2025</option>
+                    <option value="far">FC VOID vs AS FAR — 05/04/2025</option>
+                </select>
+
+                <fieldset>
+                    <legend>Catégorie de place :</legend>
+                    <input type="radio" id="tribune" name="categorie" value="tribune" required>
+                    <label for="tribune">Tribune</label>
+
+                    <input type="radio" id="virage" name="categorie" value="virage">
+                    <label for="virage">Virage</label>
+
+                    <input type="radio" id="pelouse" name="categorie" value="pelouse">
+                    <label for="pelouse">Pelouse</label>
+                </fieldset>
+
+                <label for="tickets">Nombre de tickets :</label>
+                <input type="number" id="tickets" name="tickets" min="1" max="10" required>
+
+                <label for="commentaire">Commentaire :</label>
+                <textarea id="commentaire" name="commentaire" rows="4"></textarea>
+
+                <div class="conditions-container">
+                    <input type="checkbox" id="conditions" name="conditions" required>
+                    <label for="conditions">J'accepte les conditions générales</label>
+                </div>
+
+                <button type="submit">Réserver mon ticket</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 FC VOID — Tous droits réservés</p>
+    </footer>
+
+</body>
+</html>

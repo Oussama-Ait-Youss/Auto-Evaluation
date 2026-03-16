@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketMatch — Réservation (Tailwind CSS)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#27AE60',
+                            dark: '#1e8449'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen font-sans text-gray-800">
+
+    <nav class="bg-green-600 shadow-sm text-white">
+        <div class="max-w-[800px] mx-auto px-4 py-3 flex justify-between items-center">
+            <a class="font-bold text-xl tracking-wide" href="#">TicketMatch</a>
+            
+            <button id="mobile-menu-btn" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+
+            <div id="nav-links" class="hidden md:flex flex-col md:flex-row gap-4 absolute md:static top-14 left-0 w-full md:w-auto bg-green-600 md:bg-transparent p-4 md:p-0 z-10 shadow-md md:shadow-none">
+                <a class="font-semibold hover:text-green-200 transition" href="#">Accueil</a>
+                <a class="hover:text-green-200 transition" href="#">Matchs</a>
+                <a class="hover:text-green-200 transition" href="#">Mes Réservations</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="w-full max-w-[800px] mx-auto my-10 px-4">
+        
+        <div class="bg-white rounded-lg shadow-sm border-l-4 border-red-600 mb-8 overflow-hidden">
+            <div class="p-5 md:p-6">
+                <h2 class="text-lg font-bold text-red-600 mb-2">Prochain match</h2>
+                <p class="text-xl mb-1"><strong>FC VOID vs Raja Club</strong></p>
+                <p class="text-gray-500 mb-1">📅 15/03/2025 à 20h00</p>
+                <p class="text-gray-500">🏟️ Stade d'Honneur</p>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-6">Réserver un ticket</h2>
+                <form action="#" method="POST">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label for="nomTw" class="block font-bold text-gray-700 mb-1">Nom complet</label>
+                            <input type="text" id="nomTw" name="nom" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition">
+                        </div>
+                        <div>
+                            <label for="emailTw" class="block font-bold text-gray-700 mb-1">Email</label>
+                            <input type="email" id="emailTw" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition">
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="telephoneTw" class="block font-bold text-gray-700 mb-1">Téléphone</label>
+                        <input type="tel" id="telephoneTw" name="telephone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="matchTw" class="block font-bold text-gray-700 mb-1">Match</label>
+                        <select id="matchTw" name="match" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition bg-white">
+                            <option value="" disabled selected>Choisissez un match...</option>
+                            <option value="raja">FC VOID vs Raja Club — 15/03/2025</option>
+                            <option value="wydad">FC VOID vs Wydad AC — 22/03/2025</option>
+                            <option value="far">FC VOID vs AS FAR — 05/04/2025</option>
+                        </select>
+                    </div>
+
+                    <fieldset class="mb-4 p-4 border border-gray-200 rounded-md bg-gray-50">
+                        <legend class="px-2 text-sm font-bold text-gray-700">Catégorie de place</legend>
+                        <div class="flex flex-wrap gap-6 mt-2">
+                            <label class="inline-flex items-center cursor-pointer">
+                                <input type="radio" name="categorieTw" value="tribune" required class="w-4 h-4 text-green-600 border-gray-300 focus:ring-green-500">
+                                <span class="ml-2 text-gray-700">Tribune</span>
+                            </label>
+                            <label class="inline-flex items-center cursor-pointer">
+                                <input type="radio" name="categorieTw" value="virage" class="w-4 h-4 text-green-600 border-gray-300 focus:ring-green-500">
+                                <span class="ml-2 text-gray-700">Virage</span>
+                            </label>
+                            <label class="inline-flex items-center cursor-pointer">
+                                <input type="radio" name="categorieTw" value="pelouse" class="w-4 h-4 text-green-600 border-gray-300 focus:ring-green-500">
+                                <span class="ml-2 text-gray-700">Pelouse</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="mb-4">
+                        <label for="ticketsTw" class="block font-bold text-gray-700 mb-1">Nombre de tickets</label>
+                        <input type="number" id="ticketsTw" name="tickets" min="1" max="10" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition">
+                    </div>
+
+                    <div class="mb-5">
+                        <label for="commentaireTw" class="block font-bold text-gray-700 mb-1">Commentaire</label>
+                        <textarea id="commentaireTw" name="commentaire" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition"></textarea>
+                    </div>
+
+                    <div class="flex items-center mb-6">
+                        <input type="checkbox" id="conditionsTw" name="conditions" required class="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500 cursor-pointer">
+                        <label for="conditionsTw" class="ml-2 text-gray-700 cursor-pointer">
+                            J'accepte les conditions générales
+                        </label>
+                    </div>
+
+                    <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-md text-lg transition duration-200 shadow-sm">
+                        Réserver mon ticket
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-4 mt-auto">
+        <p class="m-0">© 2025 FC VOID — Tous droits réservés</p>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('nav-links');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+    </script>
+</body>
+</html>
