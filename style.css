@@ -79,7 +79,7 @@ form textarea {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    box-sizing: border-box; /* Assure que le padding ne dépasse pas les 100% */
+    box-sizing: border-box; 
 }
 
 fieldset {
@@ -129,7 +129,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #1e8449; /* Vert plus foncé au survol */
+    background-color: #1e8449;
 }
 
 /* Footer */
